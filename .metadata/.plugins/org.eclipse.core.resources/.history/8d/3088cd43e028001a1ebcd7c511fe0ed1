@@ -1,0 +1,25 @@
+package Practice;
+
+public class q5 
+{
+	public static void main(String[] args) 
+	{
+		String str = "babad";
+		System.out.println("Res : " + LongestPalindromicSubString(str));
+	}
+	
+	private static String LongestPalindromicSubString(String str)
+	{
+		char arr[] = str.toCharArray();
+		String res = "", tmp = "";
+		int i = 0, j = str.length();
+		
+		while(i < str.length())
+		{
+			while(j >= 0)
+			{
+				
+			}// while
+		}// while
+	}
+}

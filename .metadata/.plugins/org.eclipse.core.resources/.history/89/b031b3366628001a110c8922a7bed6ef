@@ -1,0 +1,37 @@
+package Practice;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class q3 
+{
+	public static void main(String[] args) 
+	{
+		String str = "abcabcbb";
+		System.out.println("res : " + LongestSubstring(str));
+	}
+	
+	private static int LongestSubstring(String str)
+	{
+		if(str == "")
+		{
+			return 0;
+		}// if
+		
+		Set<String> set = new HashSet<>();
+		int len = str.length();
+		int cnt = 0, i = 0, j = 0;
+		
+		while(i < len && j < len)
+		{
+			if(!set.contains(j))
+			{
+				set.add(str.valueOf(j++));
+				cnt++;
+			}// if
+		}// while
+		
+		
+	}
+
+}

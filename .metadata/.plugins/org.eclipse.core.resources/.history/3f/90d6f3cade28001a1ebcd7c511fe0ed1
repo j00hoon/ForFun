@@ -1,0 +1,24 @@
+package Practice;
+
+public class q5 
+{
+	public static void main(String[] args) 
+	{
+		String str = "abcda";
+		System.out.println("Res : " + LongestPalindromicSubString(str));
+	}
+	
+	private static String LongestPalindromicSubString(String str)
+	{
+		char arr[] = str.toCharArray();
+		
+		if(str.length() % 2 == 0)
+		{
+			
+		}// if
+		
+		
+		
+		
+	}
+}

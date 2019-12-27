@@ -1,0 +1,70 @@
+package Practice;
+
+public class q4 
+{
+	public static void main(String[] args) 
+	{
+		int arr1[] = {1, 2};
+		int arr2[] = {3, 4};
+		
+		System.out.println("Res : " + findMedianSortedArrays(arr1, arr2));
+	}
+	
+	private static double findMedianSortedArrays(int arr1[], int arr2[])
+	{
+		double sum = 0;
+		int len = arr1.length + arr2.length;
+		int res[] = new int[len];
+		
+		res = mergeArr(arr1, arr2);
+		if(len % 2 == 0)
+		{
+			return (res[len / 2] + res[len / 2 - 1]) / 2;
+		}// if
+		else
+		{
+			return res[len / 2];
+		}// else		
+	}
+	
+	private static int[] mergeArr(int arr1[], int arr2[])
+	{
+		int len = arr1.length + arr2.length;
+		int tmp[] = new int[len];
+		int i = 0, j = 0;
+		
+		while(i < len)
+		{
+			if(i < arr1.length)
+			{
+				tmp[i] = arr1[i];
+				i++;				
+			}// if
+			tmp[i] = arr2[j];
+			j++;
+			i++;
+		}// while
+		
+		tmp = sortArr(tmp);
+		return tmp;
+	}
+	
+	private static int[] sortArr(int arr[])
+	{
+		int tmp = 0;
+		
+		for(int i = 0; i < arr.length; i++)
+		{
+			for(int j = i + 1; j < arr.length; j++)
+			{
+				if(arr[i] > arr[j])
+				{
+					tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = tmp;
+				}// if
+			}// for
+		}// for
+		return arr;
+	}
+}
